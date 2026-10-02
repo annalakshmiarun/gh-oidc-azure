@@ -1,0 +1,17 @@
+location            = "eastus"
+resource_group_name = "rg-network-dev"
+virtual_network_name = "vnet-dev"
+
+# Optional: omit this to use the subscription selected by `az account set`.
+# subscription_id = "00000000-0000-0000-0000-000000000000"
+
+address_space = ["10.20.0.0/16"]
+
+subnets = {
+  app = {
+    address_prefixes = ["10.20.1.0/24"]
+  }
+  data = {
+    address_prefixes = ["10.20.2.0/24"]
+  }
+}
